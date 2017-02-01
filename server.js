@@ -77,6 +77,20 @@ appRouter.route('/edit/:id')
         })
     });
 
+appRouter.use(function(req, res, next){
+    //console.log("In Router Usage" + req.body.username);
+    next();
+});
+
+appRouter.route('/login')
+    .post(function(req, res){
+        var username = req.body.username;
+        Student.findOne({username:username},function(err, doc){
+            if(err) throw err.message;
+            res.json(doc);
+        })
+    });
+
 app.use('/app', appRouter);
 
 app.listen(port, function(){
