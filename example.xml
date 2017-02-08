@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:sch='http://schema.concierge.com' xmlns:env='http://schema.concierge.com/Envelope'>
+    <soapenv:Header/>
+    <soapenv:Body>
+    <m:clientRequest xmlns:m='http://schema.concierge.com' xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+    <env:EaiEnvelope xmlns:env='http://schema.concierge.com/Envelope'>
+    <env:ApplicationName>MTNN</env:ApplicationName>
+    <env:Domain>Concierge</env:Domain>
+    <env:Service>WorkflowService</env:Service>
+    <env:ServiceId>3</env:ServiceId>
+    <env:Language>En</env:Language>
+    <env:UserId>tecnotree</env:UserId>
+    <env:Sender>tecnotree</env:Sender>
+    <env:MessageId>222017072</env:MessageId>
+    <env:SentTimeStamp>2017-02-02T00:07:02.837+05:30</env:SentTimeStamp>
+    <env:Payload>
+        <wor:WorkflowDetails xmlns:wor='http://schema.concierge.com/WorkflowDetails'>
+            <wor:Request>
+                <wor:Operation_Name>changeService</wor:Operation_Name>
+                <wor:ChangeServicesRequest>
+                    <wor:code>5030</wor:code>
+                    <wor:request>
+                        <EVENT>
+                            <REQUEST EXTERNAL_USER='tecnotree' EXTERNAL_APPLICATION='con_ent' EXTERNAL_REFERENCE='' INFO_LEVEL='9' NO_OF_ROWS='10' POSITION='0'/>
+                            <REQUESTDETAILS><REQUEST_DETAILS CALENDER_TYPE='' DESCRIPTIONS='' DAY_CODES='' SPECIAL_DATE='' START_TIME_HR='' START_TIME_MIN='' END_TIME_HR='' END_TIME_MIN='' CATEGORY_CODE=''/></REQUESTDETAILS></EVENT></wor:request></wor:ChangeServicesRequest></wor:Request></wor:WorkflowDetails></env:Payload></env:EaiEnvelope></m:clientRequest>
+</soapenv:Body>
+</soapenv:Envelope>

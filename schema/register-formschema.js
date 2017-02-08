@@ -2,12 +2,12 @@
  * Created by vemulma on 1/31/2017.
  */
 
-var mongoose = require('mongoose');
-var bcrypt = require("bcrypt-nodejs");
+const mongoose = require('mongoose');
+const bcrypt = require("bcrypt-nodejs");
 
-var Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-var studentSchema = new Schema({
+const studentSchema = new Schema({
    name : String,
    username : String,
    email : String,
