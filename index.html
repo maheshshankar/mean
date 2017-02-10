@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" href="css/bower_components/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body ng-controller="myCtrl">
 <div class="container">
     <div class="container">
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -12,7 +12,7 @@
                 </div>
 
                 <div style="padding-top:30px" class="panel-body" >
-                    <form class="form-horizontal" role="form" name="resgisterForm">
+                    <form class="form-horizontal" role="form" name="resgisterForm" novalidate>
 
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -35,12 +35,12 @@
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" class="form-control"
-                                   name="password" ng-model="login.password" placeholder="password">
+                                   name="password" ng-model="register.password" placeholder="password">
                         </div>
                         <div style="margin-top:10px" class="form-group">
                             <!-- Button -->
                             <div class="col-sm-12 controls">
-                                <a class="btn btn-success" >Submit</a>
+                                <a ng-click="registerUser()" class="btn btn-success" >Submit</a>
                             </div>
                         </div>
                     </form>

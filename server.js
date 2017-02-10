@@ -1,6 +1,7 @@
 /**
  * Created by vemulma on 1/31/2017.
  */
+
 'use strict';
 
 const express = require('express');
@@ -10,22 +11,42 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const port = 3390;
 var ash = require('lodash');
-//const xslt = require('xslt');
 const Student = require('./schema/register-formschema.js');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
-//const parseString = require('xml2js').parseString;
-const x2js = require('x2js');
-//console.log(x2js);
-const x2jsObj = new x2js();
-const json2xml = require('jsontoxml');
-var js2xmlparser = require('js2xmlparser');
-const xmltojson = require('./xml2json.js');
-const xmll = new xmltojson();
 
-var con = require('./xml2json');
-var conn = new con();
+var x2js = require('x2js');
+var x2jsobj = new x2js();
+var json2xml = require('json2xml');
 
+/*
+var data = [{
+    "attrNamr": "custId",
+    "datatype": "s",
+    "df": "maheshsh"
+},
+    {
+        "attrNamr": "custId",
+        "datatype": "s",
+        "df": "maheshsh"
+    }];
+var abc = x2jsobj.js2xml(data);
+var dataa = { "operationValueString": {
+    "__prefix": "mas",
+  //      "__text":categoryCode+"~"+categoryDesc+"~"+serviceCode+"~"+categoryType+"~"+parentCategoryCode+"~"+workflowId+"~"+status+"~"+lastAccessedBy+"~"+lastAccessedDate+"~"+additionalData+"~"+customerCategoryCode+"~"+postToRemedy+"~"+nccDesc+"~"+nccCode+"~"+nccDesc
+    "__text": "1001~Check bill~GSM~Q~0~0~I~~02/02/2017 12:22:06~<DATA>"+abc+"</DATA>~H~N~N~~"
+}};
+*/
+
+//var xmll  = "&lt;DATA>&lt;/DATA>";
+//var xl = x2jsobj.xml2js(xmll);
+
+var abcc = x2jsobj.js2xml(dataa);
+//console.log(xml);
+console.log("11"+abcc);
+//console.log(xl);
+var a=x2jsobj.xml2js(xml)
+//console.log("22"+a)
 app.use((req, res, next) => {
     res.setHeader('ACCESS-CONTROL-ALLOW-ORIGIN', '*');
     res.setHeader('ACCESS-Control-Allow-Method', 'GET,POST,PUT,DELETE');
@@ -50,7 +71,8 @@ appRouter.route('/')
 
 appRouter.route('/')
     .post((req, res) => {
-        let student = new Student();
+        console.log(req.body);
+        /*let student = new Student();
         student.name = req.body.name;
         student.username = req.body.username;
         student.email = req.body.email;
@@ -59,7 +81,7 @@ appRouter.route('/')
         student.save((err) => {
             if(err) throw err.message;
             res.json({"msg":"User Saved..!"});
-        })
+        })*/
     });
 
 appRouter.route('/getRecord/:id')
