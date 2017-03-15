@@ -10,7 +10,7 @@
 
     var app = angular.module(ngModule, ngDependencies);
     app.controller("myCtrl", function($scope, $http){
-        console.log("In CTRL");
+        console.log("In CT");
        $scope.registerUser = function(){
            console.log($scope.register);
            $http.post('http://localhost:3390/app/', $scope.register)

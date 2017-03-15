@@ -11,8 +11,7 @@ const studentSchema = new Schema({
    name : String,
    username : String,
    email : String,
-   password : String,
-   phonenumber : String
+   password : String
 });
 
 studentSchema.pre('save', function (next){
@@ -27,4 +26,4 @@ studentSchema.pre('save', function (next){
 });
 
 
-module.exports = mongoose.model('registration',studentSchema);
+module.exports = mongoose.model('users',studentSchema);
